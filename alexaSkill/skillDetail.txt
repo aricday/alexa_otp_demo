@@ -1,0 +1,99 @@
+Alexa Skill Configuration:
+---
+Invocation Name = voice demo
+---
+Intents:  		Sample Utterance:
+MyLogoutIntent		log out
+
+HelloGatewayIntent	hello no security
+HelloGatewayIntent	hello gateway
+
+AddTokenIntent		token service
+AddTokenIntent		request wth token
+
+PinActionIntent		enter pin {PIN}
+PinActionIntent		pin number {PIN}
+
+MFAServiceIntent	MFA service
+MFAServiceIntent	OTP service
+---
+
+PinActionIntent	Intent_Slots:
+
+Name {PIN}
+Type AMAZON.FOUR_DIGIT_NUMBER
+---
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "voice demo",
+            "intents": [
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": [
+                        "cancel voice demo"
+                    ]
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": [
+                        "stop voice demo"
+                    ]
+                },
+                {
+                    "name": "MyLogoutIntent",
+                    "slots": [],
+                    "samples": [
+                        "log out"
+                    ]
+                },
+                {
+                    "name": "HelloGatewayIntent",
+                    "slots": [],
+                    "samples": [
+                        "hello no security",
+                        "hello gateway"
+                    ]
+                },
+                {
+                    "name": "PinActionIntent",
+                    "slots": [
+                        {
+                            "name": "PIN",
+                            "type": "AMAZON.FOUR_DIGIT_NUMBER"
+                        }
+                    ],
+                    "samples": [
+                        "enter pin {PIN}",
+                        "pin number {PIN}"
+                    ]
+                },
+                {
+                    "name": "AddTokenIntent",
+                    "slots": [],
+                    "samples": [
+                        "token service",
+                        "request with token"
+                    ]
+                },
+                {
+                    "name": "MFAServiceIntent",
+                    "slots": [],
+                    "samples": [
+                        "M. F. A. service",
+                        "O. T. P.  service"
+                    ]
+                }
+            ],
+            "types": []
+        }
+    }
+}
